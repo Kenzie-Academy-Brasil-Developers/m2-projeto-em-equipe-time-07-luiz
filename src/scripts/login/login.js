@@ -21,21 +21,30 @@ const access = async () =>{
 
     const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/session/login',request)
     const response = await responseJSON.json()
-
+    
+    
     if(responseJSON.ok == true){
-
         localStorage.setItem('token',response.token)
         localStorage.setItem('name',response.user.name)
         localStorage.setItem('img',response.user.avatar_url)
-
+        
         loading()
 
         setTimeout(()=>{
             window.location.href = '../pages/homeLogged-in.html'
         },1000)
+        
     }else{
-        span.innerText = 'Usuário ou senha incorreto'
-        email.focus()
+        
+        loading()
+        
+        setTimeout(() => {
+            let stopLoading = document.getElementById('divBack')
+            stopLoading.remove()
+            span.innerText = 'Usuário ou senha incorreto'
+            email.focus()
+        },1000)
+
     }
 
 }
@@ -49,10 +58,12 @@ const loading = () => {
 
     divBack.classList = 'background'
     img.src = '../assets/loading-gif.gif'
+    divBack.id = 'divBack'
 
     divBack.appendChild(divImg)
     divImg.appendChild(img)
     main.appendChild(divBack)
+
 }
 
 const checkInput = (email,password) =>{
@@ -73,11 +84,7 @@ password.addEventListener('input', () =>{
 })
 
 login.addEventListener('click', () =>{
-        if(email.value != '' && password.value != ''){
-            access()
-        }else{
-            alert('Preencha os campos')
-        }
+    access()
 })
 
 register.addEventListener('click', () => {
