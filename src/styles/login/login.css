@@ -1,0 +1,88 @@
+main{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+section{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    width: 50%;
+}
+.purple{
+    background-color: rgb(140, 199, 248)
+}
+.white{
+    background-color: var(--white);
+}
+.pet{
+    background-image: url(../../assets/photo-1598134493136-7b63ebbd7b64.jpg);
+}
+h1{
+    margin-bottom: 20px;
+    font-size: var(--font-size-1);
+    font-weight:var(--font-weigth-5);
+}
+section h2{
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weigth-5);
+}
+section h3{
+    font-size: var(--font-size-4);
+    font-weight:var(--font-weigth-3)
+}
+.container{
+    width: 58%;
+    height: 71%;
+}
+.container-ajuste{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.moldura{
+    width: 70%;
+}
+.moldura input{
+    border: solid 0.5px black;
+    width: 100%;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: var(--border-rad-1);
+}
+.moldura button{
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    height: 30px;
+}
+.flex{
+    display: flex;
+}
+.center{
+    justify-content: center;
+}
+.center h3{
+    margin-top: 15px;
+}
+span{
+    margin-top: 15px;
+    color: var(--error);
+}
+.background{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.1);
+}
+.background img{
+    width: 45px;
+    height: 45px;
+}
