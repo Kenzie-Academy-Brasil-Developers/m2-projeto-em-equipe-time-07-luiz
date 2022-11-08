@@ -5,5 +5,39 @@
   border-bottom: 2px solid var(--grey-7);
 }
 
+.form-container {
+  padding: 50px 20px 25px;
+}
 
+.form-heading {
+  font-size: var(--font-size-2);
+}
 
+.slogan {
+  display: none;
+}
+
+.input-data {
+  font-size: 14px;
+  border: 2px solid var(--brand-5);
+}
+
+.input-data::placeholder {
+  color: var(--brand-5);
+}
+
+.link {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.link > a {
+  text-decoration: none;
+}
+
+.input-data, .submit-btn, .redirect-btn {
+  margin: 12px 0;
+  padding: 10px 10px;
+  width: 100%;
+  border-radius: var(--border-rad-2);
+}
