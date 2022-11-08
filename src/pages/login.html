@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-        <section class="purple">
+        <section class="purple" id="primeira-secao">
             <div class="container white" id="container-header">
                 <div class="container-ajuste titulo">
                     <h1>KenziePets</h2>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </section>
-        <section class="white">
+        <section class="white" id="segunda-secao">
             <div class="container">
                 <div class="container-ajuste purple pet">
                     <div class="moldura">
@@ -32,11 +32,17 @@
                         <div>
                             <input type="password" placeholder="Sua senha" id="senha">
                         </div>
-                        <div>
-                            <button id="login">Login</button>
+                        <div class="flex center">
+                            <span id="span"></span>
                         </div>
                         <div>
-                            <button>Cadastre-se</button>
+                            <button id="login" disabled>Login</button>
+                        </div>
+                        <div class="flex center">
+                            <h3>Ou</h3>
+                        </div>
+                        <div>
+                            <button id="register">Cadastre-se</button>
                         </div>
                     </div>
                 </div>
