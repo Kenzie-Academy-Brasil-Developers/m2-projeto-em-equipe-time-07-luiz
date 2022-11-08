@@ -28,6 +28,8 @@ const access = async () =>{
         localStorage.setItem('name',response.user.name)
         localStorage.setItem('img',response.user.avatar_url)
 
+        loading()
+
         setTimeout(()=>{
             window.location.href = '../pages/homeLogged-in.html'
         },1000)
@@ -38,6 +40,20 @@ const access = async () =>{
 
 }
 
+const loading = () => {
+    let main = document.getElementById('main')
+
+    let divBack = document.createElement('div')
+    let divImg = document.createElement('div')
+    let img = document.createElement('img')
+
+    divBack.classList = 'background'
+    img.src = '../assets/loading-gif.gif'
+
+    divBack.appendChild(divImg)
+    divImg.appendChild(img)
+    main.appendChild(divBack)
+}
 
 const checkInput = (email,password) =>{
 
@@ -51,6 +67,7 @@ const checkInput = (email,password) =>{
 email.addEventListener('input', () =>{
     checkInput(email,password)
 })
+
 password.addEventListener('input', () =>{
     checkInput(email,password)
 })
@@ -62,6 +79,10 @@ login.addEventListener('click', () =>{
             alert('Preencha os campos')
         }
 })
+
 register.addEventListener('click', () => {
-    window.location.href = '../pages/register.html'
+    loading ()
+    setTimeout(() => {
+        window.location.href = '../pages/register.html'
+    },500)
 })

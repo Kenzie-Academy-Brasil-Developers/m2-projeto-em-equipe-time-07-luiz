@@ -10,7 +10,6 @@ section{
     height: 100vh;
     width: 50%;
 }
-
 .purple{
     background-color: rgb(107, 183, 245)
 }
@@ -63,7 +62,6 @@ section h3{
     width: 100%;
     height: 30px;
 }
-
 .flex{
     display: flex;
 }
@@ -79,4 +77,17 @@ section h3{
 span{
     margin-top: 15px;
     color: red;
+}
+.background{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.1);
+}
+.background img{
+    width: 45px;
+    height: 45px;
 }
