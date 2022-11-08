@@ -1,0 +1,9 @@
+.left-container {
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--grey-7);
+}
+
+
+

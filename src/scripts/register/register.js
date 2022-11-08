@@ -43,4 +43,4 @@ const registerData = () => {
 
 registerData();
 
-export { accountWithApi };
+export { registerData };
