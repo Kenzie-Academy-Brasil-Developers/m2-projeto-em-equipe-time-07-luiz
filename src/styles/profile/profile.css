@@ -145,7 +145,7 @@ footer{
     width: 100%;
 }
 footer h3{
-    color: #4E2096;
+    color: var(--brand-1);
 }
 .div-info-card{
     width: 60%;

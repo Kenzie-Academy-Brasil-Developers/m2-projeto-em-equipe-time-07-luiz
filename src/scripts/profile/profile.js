@@ -82,7 +82,7 @@ const criarCards = (element) => {
     h3Nome.innerText = `Nome : ${element.name}`
     h3Especie.innerText = `Espécie : ${element.species}`
 
-    if(element.avaiable_for_adoption==true){
+    if(element.available_for_adoption){
         h3Disponivel.innerText = `Adotável ? : Sim`
     }else{
         h3Disponivel.innerText = `Adotável ? : Não`

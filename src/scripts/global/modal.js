@@ -68,7 +68,9 @@ export function conteudoModalDeletarUser(){
 
         requisicaoDeletarUser()
 
-        window.location.reload()
+        setTimeout(()=>{
+            window.location.href = '../../index.html'
+        },1000)
     })
 
     DivConteudoModalDeletar.append(tagH1DeletarFuncionario, bottonCancelar, bottonDeletarUser)
@@ -167,7 +169,7 @@ export function conteudoModalEditarUser(){
             requisicaoEditarUser(user)
             setTimeout(()=>{
                 window.location.reload()
-            },500)
+            },700)
         }
     })
     
@@ -238,7 +240,7 @@ export function conteudoModalCriarPet(){
             requisicaoCriarPet(user)
             setTimeout(()=>{
                 window.location.reload()
-            },500)
+            },700)
         }        
         else{
             alert("requisição negada, input esta em branco")
@@ -309,9 +311,10 @@ export function conteudoModalEditarPet(idPet){
             // console.log(user)
             // console.log("Criando")
 
+            requisicaoEditarPet(user,idPet)
             setTimeout(()=>{
                 window.location.reload()
-            },500)
+            },700)
         } else{
             alert("requisição negada, input esta em branco")
         }    
