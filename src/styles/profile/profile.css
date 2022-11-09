@@ -1,4 +1,5 @@
 header{
+    min-width: 100%;
     background-color: var(--white);
     display: flex;
     height: 50px;
@@ -37,6 +38,7 @@ body{
     background-color: var(--brand-1);
 }
 section{
+    width: 100%;
     margin-top: 120px;
     align-items: center;
     justify-content: flex-start;
@@ -47,23 +49,28 @@ section{
 img{
     background-color: var(--brand-4);
 }
+.profile{
+    width: 420px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 .img-profile img{
-    top: 13%;
-    left: 44%;
-    position: absolute;
+    transform: translateY(-70px);
     border: solid 4px var(--white);
     border-radius: 100%;
     height: 150px;
     width: 150px;
 }
 .info-profile{
-    margin-top: 100px;
     border: solid 0.5px var(--grey-2);
     align-items: center;
     justify-content: center;
     display: flex;
     height: 150px;
-    width: 420px;
+    width: 100%;
 }
 .button-flex{
     justify-content: space-evenly;
@@ -128,7 +135,8 @@ li{
     border: solid 0.5px var(--brand-3);
     display: flex;
     margin-top: 10px;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     height: 180px;
 }
 .div-img-card{
@@ -184,4 +192,10 @@ footer h3{
     background-color: transparent;
     width: 45px;
     height: 45px;
+}
+
+@media(max-width:500px){
+    ul{
+        width: 100%;
+    }
 }
