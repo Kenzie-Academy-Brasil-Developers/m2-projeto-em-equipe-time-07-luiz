@@ -1,3 +1,5 @@
+import { registerToastify, removeToast } from "../toast/toast.js";
+
 const form = document.querySelector('.form-container');
 
 const accountWithApi = async (body, url) => {
@@ -9,7 +11,6 @@ const accountWithApi = async (body, url) => {
   })
 
   const result = await request.json();
-  console.log(result)
   return result;
 }
 
@@ -29,6 +30,7 @@ const registerData = () => {
 
     e.preventDefault();
 
+    removeToast();
     const [name, email, password, avatar] = inputArray;
 
     const registerUserData = {};
@@ -37,7 +39,17 @@ const registerData = () => {
     registerUserData.password = password.value;
     registerUserData.avatar_url   = avatar.value;
 
-    accountWithApi(registerUserData, 'https://m2-api-adot-pet.herokuapp.com/users');
+    const registerUser = await accountWithApi(registerUserData, 'https://m2-api-adot-pet.herokuapp.com/users');
+
+    if (registerUser.message) {
+      registerToastify('error', registerUser.message);
+    }
+    else {
+      registerToastify('success');
+      setTimeout(() => {
+        location.replace('./login.html');
+      }, 4000)
+    }
   })
 }
 

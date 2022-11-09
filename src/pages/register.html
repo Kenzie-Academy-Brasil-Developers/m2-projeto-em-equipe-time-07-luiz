@@ -6,36 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="../styles/global/globalStyles.css"/>
+  <link rel="stylesheet" href="../styles/global/header.css"/>
   <link rel="stylesheet" href="../styles/registerPage/registerPage.css"/>
+  <link rel="stylesheet" href="../styles/toast/toast.css"/>
+  <link rel="stylesheet" href="../styles/registerPage/media.css"/>
 
   <title>KenziePets</title>
 </head>
+<body class="back-purple">
 
-<body>
-
-  <header class="left-container display-flex">
-    <h1 class="title">KenziePets</h1>
-    <div class="redirect-div">
-      <a href="../../index.html"><button class="redirect-btn register">Home</button></a>
-      <a href="./login.html"><button class="redirec-btn login">Login</button></a>
+  <header class="left-container display-flex back-white">
+    <div class="frame-div header">
+      <h1 class="title text-purple">KenziePets</h1>
+      <p class="slogan">Cadastre-se e conheça mais</p>
+      <img class="dropdown-icon" src="../assets/menuListIcon.svg" alt="">
+      <div class="redirect-div">
+        <a class="button-link" href="../../index.html"><button class="redirect-btn register text-purple border-none">Home</button></a>
+        <a class="button-link" href="./login.html"><button class="redirect-btn login text-purple border-none">Login</button></a>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main class="right-container back-white">
     <form class="form-container">
-      <h2 class="form-heading">Cadastrar</h2>
-      <input id="register-name" type="text" placeholder="Nome">
-      <input id="register-email" type="email" placeholder="E-mail">
-      <input id="register-password" type="password" placeholder="Senha">
-      <input id="register-avatar" type="text" placeholder="Avatar">
+      <h2 class="form-heading text-purple">Cadastrar</h2>
+      <input id="register-name" class="input-data text-purple" type="text" placeholder="Nome">
+      <input id="register-email" class="input-data text-purple" type="email" placeholder="E-mail">
+      <input id="register-password" class="input-data text-purple" type="password" placeholder="Senha">
+      <input id="register-avatar" class="input-data text-purple" type="text" placeholder="Avatar">
 
-      <button type="submit">Cadastrar</button>
+      <button class="submit-btn back-purple border-none" type="submit">Cadastrar</button>
 
-      <a>Já tem cadastro? <a href="./login.html">Clique aqui</a> para logar.</p>
+      <p class="link">Já tem cadastro? <a class="text-purple" href="./login.html">Clique aqui</a> para logar.</p>
     </form>
   </main>
 
   <script type="module" src="../scripts/register/register.js"></script>
+  <script type="module" src="../scripts/global/dropdown.js"></script>
 
 </body>
 </html>

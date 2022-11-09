@@ -1,0 +1,30 @@
+.toast-card {
+  width: 350px;
+  height: 125px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+  position: absolute;
+  border-radius: var(--border-rad-1);
+  bottom: 60px;
+  right: 60px;
+}
+
+.show-toast {
+  animation: showToast 0.5s;
+}
+
+@keyframes showToast {
+
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+
+}
