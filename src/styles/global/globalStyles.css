@@ -115,6 +115,11 @@ body {
   color: var(--brand-4);
 }
 
+.container-mobile{
+  width: 92%;
+  margin: 0 auto;
+}
+
 .border-none {
   border: none;
 }
