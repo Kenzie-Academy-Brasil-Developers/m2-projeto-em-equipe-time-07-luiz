@@ -11,16 +11,11 @@ const requestPetAll = async() => {
         })
    
         const response = await resposta.json()
-       // console.log(response)
         
         for(let i = 0; i < 6; i++){
         let index = Math.floor(Math.random()*(response.length-7))
-       // console.log(index)
         randonArr.push(response[index])
         }
-
-
-        //console.log(randonArr)
 
         criarCards(randonArr)
 
@@ -35,7 +30,7 @@ const requestPetAll = async() => {
 requestPetAll()
 
 const tagUl = document.querySelector("ul")
-//name, specie, avatar kkkkk
+
 
 function criarCards(arr){
 
@@ -75,12 +70,10 @@ function chengePage(){
     const btnLogin = document.querySelector(".buttonLogin")
 
     btnLogin.addEventListener("click", ()=>{
-        console.log("login Go")
         window.location.assign("./src/pages/login.html")
     })
 
     btnRegister.addEventListener("click", ()=>{
-        console.log("Register Go")
         window.location.assign("./src/pages/register.html")
     })
 }
