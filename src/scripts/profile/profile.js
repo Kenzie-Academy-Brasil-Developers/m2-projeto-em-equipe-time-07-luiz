@@ -7,6 +7,11 @@ let email = document.getElementById('email')
 let nome = document.getElementById('name')
 let img = document.getElementById('img')
 
+let logout = document.getElementById('logout')
+let home = document.getElementById('home')
+
+
+
 const dinamizar = () => {
     email.innerText =`Email: ${emailL}`
     nome.innerText = `Nome: ${nameL}`
@@ -80,3 +85,42 @@ const request = async () => {
 }
 
 request()
+
+const loading = () => {
+    let main = document.getElementById('main')
+
+    let divBack = document.createElement('div')
+    let divImg = document.createElement('div')
+    let img = document.createElement('img')
+
+    divBack.classList = 'background'
+    img.src = '../assets/loading-gif.gif'
+    divBack.id = 'divBack'
+
+    divBack.appendChild(divImg)
+    divImg.appendChild(img)
+    main.appendChild(divBack)
+
+}
+
+logout.addEventListener('click', () => {
+
+    loading()
+
+    localStorage.setItem('token',null)
+    localStorage.setItem('email',null)
+    localStorage.setItem('name',null)
+    localStorage.setItem('img',null)
+
+    setTimeout(()=>{
+        window.location.href = '../pages/home.html'
+    },1000)
+    
+})
+
+home.addEventListener('click', () => {
+    loading()
+    setTimeout(()=>{
+        window.location.href = '../pages/homeLogged-in.html'
+    },1000)
+})
