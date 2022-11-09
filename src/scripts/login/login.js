@@ -92,9 +92,6 @@ form.addEventListener('submit', (e) => {
     access()
 })
 
-// login.addEventListener('click', () =>{
-//     access()
-// })
 
 register.addEventListener('click', () => {
     loading ()
