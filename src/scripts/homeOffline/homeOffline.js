@@ -31,18 +31,16 @@ const requestPetAll = async() => {
     }
 
 }
+
 requestPetAll()
 
 const tagUl = document.querySelector("ul")
-//name, specie, avatar
+//name, specie, avatar kkkkk
 
 function criarCards(arr){
 
     arr.forEach((element) => {
 
-        //console.log(element)
-
-        
         const tagLi = document.createElement("li")
         tagLi.className = `tagLi`
     
