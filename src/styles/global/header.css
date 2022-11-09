@@ -1,0 +1,48 @@
+.frame-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.redirect-div {
+  width: 100%;
+  position: absolute;
+  left: 0%;
+  top: 50px;
+  display: none;
+  background-color: var(--white);
+}
+
+.redirect-active {
+  display: flex;
+  justify-content: space-around;
+  animation: dropdown 0.5s;
+  border-bottom: 1px solid var(--brand-1);
+}
+
+.button-link {
+  width: 25%;
+}
+
+.redirect-btn {
+  background-color: var(--brand-1);
+  color: var(--white);
+}
+
+@keyframes dropdown {
+
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+
+}

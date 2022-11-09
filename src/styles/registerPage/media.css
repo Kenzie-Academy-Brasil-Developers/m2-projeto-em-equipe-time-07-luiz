@@ -1,0 +1,140 @@
+@media (min-width: 550px) {
+
+  .left-container {
+    padding: 0 60px;
+  }
+
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+}
+
+@media (min-width: 1000px) {
+
+  body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dropdown-icon {
+    display: none;
+  }
+
+  .left-container, .right-container {
+    width: 50%;
+    height: 100vh;
+    padding: 0;
+  }
+  
+  .left-container, .form-container {
+    background-color: var(--brand-1);
+  }
+  
+  .left-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .right-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-heading, .link {
+    margin-bottom: 25px;
+    color: var(--white);
+  }
+
+  .title {
+    color: var(--white);
+    font-size: var(--font-size-1);
+  }
+  
+  .slogan {
+    display: inline-block;
+    color: var(--white);
+    font-size: var(--font-size-3);
+  }
+  
+  .title, .slogan, .redirect-div {
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    color: var(--brand-1)
+  }
+
+  .frame-div {
+    height: 60%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .frame-div, .form-container {
+    width: 70%;
+    border-radius: 10px;
+  }
+
+  .form-container {
+    width: 70%;
+    max-width: none;
+    height: 60%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-data {
+    max-width: 350px;
+    background-color: var(--brand-1);
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  .input-data::placeholder {
+    color: var(--white);
+  }
+
+  .submit-btn {
+    max-width: 350px;
+    background-color: var(--white);
+    color: var(--brand-1);
+    font-size: 16px;
+  }
+
+  .button-link {
+    width: 300px;
+    margin: 12px 0;
+  }
+
+  .link > a {
+    color: var(--white);
+    text-decoration: underline;
+  }
+
+  .redirect-div {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .redirect-btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+    background-color: var(--white);
+    color: var(--brand-1);
+    border: 2px solid var(--brand-1);
+    font-size: 16px;
+  }
+
+}
