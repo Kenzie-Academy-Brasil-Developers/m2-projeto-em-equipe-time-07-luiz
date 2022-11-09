@@ -6,7 +6,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rebeccapurple;
+    margin: 0 auto;
 }
 main{
     max-width: 1440px;
@@ -18,15 +18,21 @@ main{
     
 }
 header{
+    
+    height: 81px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    width: 100vw;
+    padding: 10px;
+}
+
+.cover-header{
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 81px;
-    border-bottom: 1px solid rgb(204, 204, 204);
-    width: 100%;
-    max-width: 1440px;
-    padding: 10px;
+    height: 100%;
 }
 
 .divListCards{
@@ -39,7 +45,6 @@ header{
 }
 ul{
     display: flex;
-    /* flex-wrap: wrap; */
     list-style: none;
     gap: 10px;
     align-items: center;
@@ -49,9 +54,10 @@ ul{
 
 li{
     width: 200px;
-    height: 272px;
+    height: 300px;
     border: 2px solid rgb(216, 215, 215);
     border-radius: 4px;
+    box-shadow: 0px 0px 5px 3px var(--grey-5);
 }
 li:hover{
     border: 2px solid rgb(182, 180, 180);
@@ -61,7 +67,6 @@ li:hover{
     width:  198px;
     height: 160px;
     border-bottom: 1px solid rgb(238, 235, 235) ;
-    /* background-image: url(./cachorro-com-fundo-transparente.png); */
     border-radius: 4px
 }
 img{
@@ -72,10 +77,14 @@ img{
 
 li > h2{
     margin: 10px;
-    color: blue;
+    color: var(--brand-1);
     padding: 0;
     font-size: larger;
     font-weight: 700;
+    max-width: 12ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 li > p{
     margin-left: 10px;
@@ -84,20 +93,17 @@ li > p{
 }
 
 footer{
-    width: 100%;
-    max-width: 1440px;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(238, 235, 235);
+    background-color: var(--grey-6);
 }
 
-header > h1{
-    /* margin-left: 30px; */
-    color: blue;
+.cover-header > h1{
+    color: var(--brand-1);
     font-weight: 700;
-    font-size: x-large;
+    font-size: var(--font-size-2)
 }
 
 
@@ -107,28 +113,53 @@ header > h1{
     align-items: center;
     gap: 10px;
     justify-content: flex-end;
-    /* margin-right: 30px; */
+    margin-top: 16px;
+}
+
+.divButtonsHeader button{
+    width: 102px;
+    height: 30px;
+    border-radius: var(--border-rad-2);
+    border: 1px solid var(--brand-1);
+    margin-bottom: 16px;
+    cursor: pointer;
 }
 
 .buttonRegister{
-    border-radius: 16px;
-    border: 1px solid rgb(17, 0, 255);
-    color: rgb(17, 0, 255);
-    width: 112px;
-    height: 30px;
+    background-color: transparent;
+    color: var(--brand-1);
 }
 .buttonLogin{
-    border-radius: 16px;
-    border: 1px solid rgb(17, 0, 255);
-    color: white;
-    background-color: rgb(17, 0, 255);
-    width: 90px;
-    height: 30px;
-}
+    background-color: var(--brand-1);
+    color: var(--white);
 
+}
 
 @media (min-width: 700px){
 
+    body{
+        overflow-x: hidden;
+    }
+
+    header{
+        max-width: 100vw;
+    }
+
+    main{
+        width: 100vw;
+        margin-bottom: 129px;
+    }
+    footer{
+        padding: 24px 0;
+        width: 100vw;
+
+    }
+
+    .cover-header{
+        display: flex;
+        justify-content: space-between;
+        width: 92%;
+    }
 
     .divListCards {
         width: 700px; 

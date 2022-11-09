@@ -15,7 +15,6 @@ function openModal(children){
     closeModalButton.addEventListener("click", (e) =>{
 
         const {className} = (e.target)
-        //console.log(className)
         
         if(className === "modal-background" || className === "modal-close"){
 
@@ -110,7 +109,6 @@ async function requisicaoEditarUser(user){
       
       .then((response)=> {
               
-          //console.log(response)
       })
       .catch(error =>{
           console.log(error)
@@ -153,7 +151,6 @@ function conteudoModalEditarUser(){
             "avatar_url": inputAvatar.value,
             
         }
-        //console.log(user)
 
         if (inputNome.value != `` & inputAvatar.value != `` & inputEmail.value != ``){
             
@@ -181,10 +178,7 @@ async function requisicaoCriarPet(user){
       }).then((response)=>response.json() )
       
       .then((response)=> {
-              
-        //  console.log(response)
-        
-          
+           
       })
       .catch(error =>{
           console.log(error)
@@ -227,8 +221,6 @@ function conteudoModalCriarPet(){
                 "bread": "SRD"
                 
             }
-            //console.log(user)
-            //console.log("Criando")
 
             requisicaoCriarPet(user)
             window.location.reload()
@@ -254,8 +246,6 @@ async function requisicaoEditarPet(user, idPet){
       }).then((response)=>response.json() )
       
       .then((response)=> {
-              
-          //console.log(response)
           
       })
       .catch(error =>{
@@ -299,8 +289,6 @@ function conteudoModalEditarPet(idPet){
                 "bread": "SRD"
                 
             }
-            // console.log(user)
-            // console.log("Criando")
 
             requisicaoEditarPet(user, idPet)
             window.location.reload()

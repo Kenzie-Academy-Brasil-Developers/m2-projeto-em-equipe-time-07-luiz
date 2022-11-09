@@ -15,6 +15,7 @@ const requestPetsAdoptable = async () => {
         })
 
         const response = await request.json()
+
         return response
         
     } catch (error) {
@@ -43,7 +44,8 @@ const createAdoption = async (body1)=> {
 }
 
 const allPets = await requestPetsAdoptable()
-
+      
+           
 
 const adoptPets = async() => {
     const adoptButton = [...document.querySelectorAll(".adopt-button")]
@@ -60,9 +62,16 @@ const adoptPets = async() => {
 }
 
 const renderPetsHomeLoggedIn = async(list) => {
+    let randonArr2 =[]
+    for(let i = 0; i < allPets.length; i++){
+        let index = Math.floor(Math.random()*(list.length-7))
+        randonArr2.push(list[index])
+    }
+
+
     const listAdoptablePets = document.querySelector(".pet-list")
     listAdoptablePets.innerText = ""
-    list.forEach(pet => {
+    randonArr2.forEach(pet => {
        if (pet.available_for_adoption){
             const cardLi = document.createElement("li")
             const petImg = document.createElement("img")
@@ -85,7 +94,13 @@ const renderPetsHomeLoggedIn = async(list) => {
 
             divDescription.append(petName, petType, adoptButton)
             cardLi.append(petImg,divDescription)
-            listAdoptablePets.appendChild(cardLi)
+
+            if(listAdoptablePets.children.length < 6){
+                listAdoptablePets.appendChild(cardLi)
+            }
+
+
+
         }
     });
     adoptPets()
