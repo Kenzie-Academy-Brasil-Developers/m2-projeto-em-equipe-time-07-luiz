@@ -129,4 +129,8 @@ span{
         background-repeat: no-repeat;
         background-position: center;
     }
+    .moldura{
+        min-width: 320px;
+        max-width: 402px;
+    }
 }
