@@ -6,24 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="../styles/global/globalStyles.css"/>
+  <link rel="stylesheet" href="../styles/global/header.css"/>
   <link rel="stylesheet" href="../styles/registerPage/registerPage.css"/>
   <link rel="stylesheet" href="../styles/toast/toast.css"/>
   <link rel="stylesheet" href="../styles/registerPage/media.css"/>
 
   <title>KenziePets</title>
 </head>
-<!-- Alterações no global -->
-<!-- Mobile first: cima a baixo -->
-<!-- Desktop: lado a lado -->
 <body class="back-purple">
 
   <header class="left-container display-flex back-white">
     <div class="frame-div header">
       <h1 class="title text-purple">KenziePets</h1>
-      <p class="slogan">Slogan boladão</p>
+      <p class="slogan">Cadastre-se e conheça mais</p>
+      <img class="dropdown-icon" src="../assets/menuListIcon.svg" alt="">
       <div class="redirect-div">
-        <a class="button-link" href="../../index.html"><button class="redirect-btn register text-purple">Home</button></a>
-        <a class="button-link" href="./login.html"><button class="redirect-btn login text-purple">Login</button></a>
+        <a class="button-link" href="../../index.html"><button class="redirect-btn register text-purple border-none">Home</button></a>
+        <a class="button-link" href="./login.html"><button class="redirect-btn login text-purple border-none">Login</button></a>
       </div>
     </div>
   </header>
@@ -43,6 +42,7 @@
   </main>
 
   <script type="module" src="../scripts/register/register.js"></script>
+  <script type="module" src="../scripts/global/dropdown.js"></script>
 
 </body>
 </html>

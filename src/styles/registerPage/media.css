@@ -18,6 +18,10 @@
     justify-content: space-between;
   }
 
+  .dropdown-icon {
+    display: none;
+  }
+
   .left-container, .right-container {
     width: 50%;
     height: 100vh;
@@ -115,6 +119,7 @@
   }
 
   .redirect-div {
+    position: static;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,6 +132,7 @@
     max-width: 300px;
     margin: 0;
     background-color: var(--white);
+    color: var(--brand-1);
     border: 2px solid var(--brand-1);
     font-size: 16px;
   }
