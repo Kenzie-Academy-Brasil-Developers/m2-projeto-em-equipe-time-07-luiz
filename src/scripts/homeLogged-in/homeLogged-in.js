@@ -1,3 +1,7 @@
+import { getLocalStorage, logout, verify } from "../global/global.js"
+
+logout()
+verify()
 
 
 const requestPetsAdoptable = async () => {
@@ -11,7 +15,6 @@ const requestPetsAdoptable = async () => {
         })
 
         const response = await request.json()
-        console.log(response)
         return response
         
     } catch (error) {
@@ -19,13 +22,48 @@ const requestPetsAdoptable = async () => {
     }
 }
 
+const createAdoption = async (body1)=> {
+    const token = getLocalStorage("token")
+    try {
+        const request = await fetch(`https://m2-api-adot-pet.herokuapp.com/adoptions/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(body1)
+        })
+        const response = await request.json()
+
+        return response
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const allPets = await requestPetsAdoptable()
 
-const renderPetsHomeLoggedIn = (list) => {
-    const listAdoptablePets = document.querySelector(".pet-list")
 
+const adoptPets = async() => {
+    const adoptButton = [...document.querySelectorAll(".adopt-button")]
+    adoptButton.forEach((button)=> {
+        button.addEventListener("click", async() => {
+            const body = {}
+            body.pet_id = button.id
+            await createAdoption(body)
+            const allPets2 = await requestPetsAdoptable()
+
+            renderPetsHomeLoggedIn(allPets2)
+        })
+    })
+}
+
+const renderPetsHomeLoggedIn = async(list) => {
+    const listAdoptablePets = document.querySelector(".pet-list")
+    listAdoptablePets.innerText = ""
     list.forEach(pet => {
-        if (pet.available_for_adoption){
+       if (pet.available_for_adoption){
             const cardLi = document.createElement("li")
             const petImg = document.createElement("img")
             const divDescription = document.createElement("div")
@@ -43,13 +81,15 @@ const renderPetsHomeLoggedIn = (list) => {
             petName.innerText = `${pet.name}`
             petType.innerText = `${pet.species}`
             adoptButton.innerText = "Me adota?"
+            adoptButton.id = `${pet.id}`
 
             divDescription.append(petName, petType, adoptButton)
             cardLi.append(petImg,divDescription)
             listAdoptablePets.appendChild(cardLi)
         }
     });
-
+    adoptPets()
 }
 
 renderPetsHomeLoggedIn(allPets)
+
