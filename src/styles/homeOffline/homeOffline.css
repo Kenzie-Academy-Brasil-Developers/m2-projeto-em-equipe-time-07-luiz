@@ -1,0 +1,156 @@
+body{
+    width: 100%;
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rebeccapurple;
+}
+main{
+    max-width: 1440px;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 81px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    width: 100%;
+    max-width: 1440px;
+    padding: 10px;
+}
+
+.divListCards{
+    
+    width: 700px;
+    height: 600px;
+    overflow-x: scroll;
+
+    
+}
+ul{
+    display: flex;
+    /* flex-wrap: wrap; */
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+   
+    overflow-x: scroll;
+}
+
+li{
+    width: 200px;
+    height: 272px;
+    border: 2px solid rgb(216, 215, 215);
+    border-radius: 4px;
+}
+li:hover{
+    border: 2px solid rgb(182, 180, 180);
+}
+
+.divImg{
+    width:  198px;
+    height: 160px;
+    border-bottom: 1px solid rgb(238, 235, 235) ;
+    /* background-image: url(./cachorro-com-fundo-transparente.png); */
+    border-radius: 4px
+}
+img{
+    width: 196px;
+    height: 160px;
+    border-radius: 4px
+}
+
+li > h2{
+    margin: 10px;
+    color: blue;
+    padding: 0;
+    font-size: larger;
+    font-weight: 700;
+}
+li > p{
+    margin-left: 10px;
+    padding: 0;
+    font-size: smaller;
+}
+
+footer{
+    width: 100%;
+    max-width: 1440px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(238, 235, 235);
+}
+
+header > h1{
+    /* margin-left: 30px; */
+    color: blue;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+
+.divButtonsHeader{
+    width: 350px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    /* margin-right: 30px; */
+}
+
+.buttonRegister{
+    border-radius: 16px;
+    border: 1px solid rgb(17, 0, 255);
+    color: rgb(17, 0, 255);
+    width: 112px;
+    height: 30px;
+}
+.buttonLogin{
+    border-radius: 16px;
+    border: 1px solid rgb(17, 0, 255);
+    color: white;
+    background-color: rgb(17, 0, 255);
+    width: 90px;
+    height: 30px;
+}
+
+
+@media (min-width: 700px){
+
+
+    .divListCards {
+        width: 700px; 
+        height: 600px; 
+        overflow-x: initial;
+    }
+
+    ul{
+        overflow-x: hidden;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+    }
+
+
+
+
+
+
+
+
+
+}
+
