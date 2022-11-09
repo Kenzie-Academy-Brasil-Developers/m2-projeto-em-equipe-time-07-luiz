@@ -10,6 +10,37 @@ let img = document.getElementById('img')
 let logout = document.getElementById('logout')
 let home = document.getElementById('home')
 
+let deleteUser = document.getElementById('delete-user')
+let attUser = document.getElementById('att')
+let createPet = document.getElementById('register-new-pet')
+
+import { openModal } from "../global/modal.js"
+import { conteudoModalDeletarUser } from "../global/modal.js"
+import { conteudoModalEditarUser } from "../global/modal.js"
+import { conteudoModalCriarPet } from "../global/modal.js"
+import { conteudoModalEditarPet } from "../global/modal.js"
+
+import { requisicaoDeletarUser } from "../global/modal.js"
+import { requisicaoEditarUser } from "../global/modal.js"
+import { requisicaoCriarPet } from "../global/modal.js"
+import { requisicaoEditarPet } from "../global/modal.js"
+
+
+
+
+deleteUser.addEventListener('click', () => {
+    conteudoModalDeletarUser ()
+})
+
+attUser.addEventListener('click', () => {
+    conteudoModalEditarUser()
+})
+createPet.addEventListener('click', () => {
+    conteudoModalCriarPet()
+})
+
+
+
 
 
 const dinamizar = () => {
@@ -37,12 +68,17 @@ const criarCards = (element) => {
     let h3Disponivel = document.createElement('h3')
     let divQuatro = document.createElement('div')
     let button = document.createElement('button')
+    
 
 
     divImg.classList = 'div-img-card'
     divInfoCard.classList = 'div-info-card'
     divContainerInfoCard.classList = 'container-info-card'
-
+    button.id = `${element.id}`
+    button.addEventListener('click', () => {
+        conteudoModalEditarPet(element.id)
+    })
+    
     h3Nome.innerText = `Nome : ${element.name}`
     h3Especie.innerText = `Espécie : ${element.species}`
 
@@ -80,7 +116,6 @@ const request = async () => {
 
     const call = await fetch('https://m2-api-adot-pet.herokuapp.com/pets/my_pets',data)
     const returnCall = await call.json()
-    console.log(returnCall)
     returnCall.forEach(pet => criarCards(pet))
 }
 
@@ -115,7 +150,7 @@ logout.addEventListener('click', () => {
     setTimeout(()=>{
         window.location.href = '../pages/home.html'
     },1000)
-    
+
 })
 
 home.addEventListener('click', () => {
