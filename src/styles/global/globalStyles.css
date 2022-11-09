@@ -13,7 +13,7 @@ button {
 
 :root{
 
-  --brand-1: #4E2096;
+  --brand-1: #8cc7f8;
   --brand-2: #33CC66;
   --brand-3: #F1EEF7;
   --brand-4: #EA534A;
@@ -97,13 +97,17 @@ body {
   color: var(--white);
 }
 
+.back-red {
+  background-color: var(--error);
+  color: var(--white);
+}
+
 .back-footer {
   background-color: var(--brand-3);
 }
 
 .text-purple {
-  color: var(--brand-1);
-  /* border: 1px solid var(--brand-1); */
+  color: #006dc7;
 }
 
 .red-element {
