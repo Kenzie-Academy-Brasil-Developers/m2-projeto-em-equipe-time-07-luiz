@@ -3,6 +3,9 @@ let password = document.getElementById('senha')
 let login = document.getElementById('login')
 let register = document.getElementById('register')
 let span = document.getElementById('span')
+let form = document.querySelector('form')
+
+
 
 
 const access = async () =>{
@@ -22,11 +25,11 @@ const access = async () =>{
     const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/session/login',request)
     const response = await responseJSON.json()
     
-    
     if(responseJSON.ok == true){
         localStorage.setItem('token',response.token)
         localStorage.setItem('name',response.user.name)
         localStorage.setItem('img',response.user.avatar_url)
+        localStorage.setItem('email',response.user.email)
         
         loading()
 
@@ -83,9 +86,12 @@ password.addEventListener('input', () =>{
     checkInput(email,password)
 })
 
-login.addEventListener('click', () =>{
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
     access()
 })
+
 
 register.addEventListener('click', () => {
     loading ()
