@@ -8,9 +8,11 @@
     font-weight: bold;
     color: var(--brand-1);
     margin-bottom: 16px; 
+    text-align: center;
 }
 
 .nav-btn{
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -43,7 +45,7 @@
 }
 
 .pet-list .card{
-    max-width: 200px;
+    min-width: 200px;
     overflow: hidden;
     height: 300px;
     box-shadow: 0px 0px 5px 3px var(--grey-5);
@@ -100,6 +102,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    bottom: -42px;
+}
+
+.footer > div > p {
+    text-align: center;
 }
 
 @media (min-width: 700px){
@@ -107,7 +115,6 @@
     .container-mobile{
         max-width: 1440px;
     }
-    
 
     body{
         overflow-x: hidden;
@@ -129,9 +136,9 @@
     }
 
     .nav-btn{
+        margin: 0;
         gap: 16px;
     }
-
 
     .pet-list{
         width: 728px;
@@ -140,9 +147,15 @@
         gap: 50px;
     }
 
+    .pet-list .card {
+        max-width: 200px;
+    }
+
     .footer{
         width: 100vw;
         margin-top: 16px;
+        background-color: var(--brand-1-70);
+        color: var(--brand-6)
     }
     .footer p{
         margin-top: auto;

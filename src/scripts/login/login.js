@@ -60,7 +60,7 @@ const loading = () => {
     let img = document.createElement('img')
 
     divBack.classList = 'background'
-    img.src = '../assets/loading-gif.gif'
+    img.src = '../assets/img/loading-gif.gif'
     divBack.id = 'divBack'
 
     divBack.appendChild(divImg)
