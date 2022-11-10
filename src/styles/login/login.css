@@ -1,3 +1,7 @@
+body {
+    margin: 0 auto;
+}
+
 main{
     align-items: center;
     justify-content: center;
@@ -25,26 +29,40 @@ header{
     background-color: var(--white);
 }
 .pet{
-    background-image: url(../../assets/img/imgDogDesktop.jpg);
-    border-top-left-radius: 30px;
+    background: url(../../assets/img/imgDogDektop.jpg) no-repeat  #80C6E9;
+    background-size: contain;
+    border-radius: 30px 0px 30px 0px;
 }
 h1{
     margin-bottom: 20px;
     font-size: var(--font-size-1);
     font-weight:var(--font-weigth-5);
 }
+
 section h2{
+    margin-bottom: 10px;
     font-size: var(--font-size-2);
     font-weight: var(--font-weigth-5);
 }
+
 section h3{
     font-size: var(--font-size-4);
     font-weight:var(--font-weigth-3)
 }
+
+section h2, section h3 {
+    color: var(--white);
+}
+
+h1, h3 {
+    color: var(--brand-1);
+}
+
 .container{
     width: 58%;
-    height: 71%;
+    height: 70%;
 }
+
 .container-ajuste{
     flex-direction: column;
     align-items: center;
@@ -57,17 +75,26 @@ section h3{
     width: 70%;
 }
 .moldura input{
-    border: solid 0.5px black;
-    width: 100%;
-    height: 30px;
-    margin-top: 15px;
-    border-radius: var(--border-rad-1);
+    background-color: #80C6E9;
 }
+
+.moldura input, .moldura button {
+    width: 100%;
+    padding: 10px 10px;
+    margin-top: 15px;
+    border-radius: var(--border-rad-2);
+    border: solid 2px var(--white);
+    color: var(--brand-6)
+}
+
+.moldura input, .moldura input::placeholder {
+    color: var(--white);
+}
+
 .moldura button{
     cursor: pointer;
     margin-top: 15px;
     width: 100%;
-    height: 30px;
 }
 .flex{
     display: flex;
@@ -101,37 +128,54 @@ span{
 }
 
 @media(max-width:1000px){
+
+    body {
+        background: url(../../assets/img/imgDogMobile.jpg) no-repeat;
+        overflow-y: hidden;
+    }
+
     main{
         flex-direction: column;
     }
+
     .container{
         width: 100%;
     }
+
     .container-ajuste{
         width: 100%;
+        background-color: #80C6E9;
     }
+
     header{
         height: 80px;
         width: 100%;
+        
     }
+
     section{
-        padding-top: 30px;
         display: block;
         width: 100%;
     }
+
     .white{
-        background-color: rgb(140, 199, 248)
+        background-color: #80C6E9;
     }
+
     h1{
-        margin-top: 70px;
+        margin-top: 40px;
+        color: var(--white);
     }
+
     .pet{
-        background-image: url(../../assets/img/imgDogMobile.jpg);
-        background-repeat: no-repeat;
+        transform: translateY(-10px);
         background-position: center;
+        border-radius: 0;
     }
+
     .moldura{
         min-width: 320px;
         max-width: 402px;
     }
+
 }

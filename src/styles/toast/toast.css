@@ -8,10 +8,18 @@
   align-items: center;
   gap: 15px;
   box-shadow: 1px 1px 10px rgba(0,0,0,.5);
-  position: absolute;
+  position: fixed;
   border-radius: var(--border-rad-1);
   bottom: 60px;
   right: 60px;
+}
+
+.toast-heading {
+  font-size: var(--font-size-3);
+}
+
+.toast-heading, .toast-description {
+  color: var(--white);
 }
 
 .show-toast {

@@ -3,10 +3,9 @@ const getLocalStorage = (key) => {
     return user
 }
 
-
 const verify = () => {
     const user = getLocalStorage("token")
-    if(user == ""){
+    if(user === 'null'){
         window.location.assign("../pages/login.html")
     }
 }

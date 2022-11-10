@@ -1,5 +1,7 @@
 body {
+  margin: 0 auto;
   overflow: hidden;
+  background-color: var(--grey-7);
 }
 
 .left-container {

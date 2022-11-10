@@ -36,8 +36,15 @@ main{
     width: 70%;
 }
 body{
+    height: 100vh;
+    margin: 0 auto;
     background-color: var(--brand-1);
 }
+
+.body {
+    height: 75vh;
+}
+
 section{
     width: 100%;
     margin-top: 120px;
@@ -47,6 +54,11 @@ section{
     display: flex;
     background-color: var(--white);
 }
+
+.body {
+    height: 100%;
+}
+
 img{
     background-color: var(--brand-4);
 }
@@ -149,12 +161,9 @@ li{
 }
 footer{
     align-items: center;
-    background-color: var(--brand-1-70);
     height: 60px;
     width: 100%;
-}
-footer h3{
-    color: var(--brand-1);
+    color: var(--white);
 }
 .div-info-card{
     width: 60%;
