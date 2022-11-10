@@ -10,6 +10,7 @@ section{
     height: 100vh;
     width: 50%;
 }
+
 header{
     align-items: center;
     justify-content: center;
@@ -24,7 +25,7 @@ header{
     background-color: var(--white);
 }
 .pet{
-    background-image: url(../../assets/photo-1598134493136-7b63ebbd7b64.jpg);
+    background-image: url(../../assets/img/imgDogDesktop.jpg);
     border-top-left-radius: 30px;
 }
 h1{
@@ -125,7 +126,7 @@ span{
         margin-top: 70px;
     }
     .pet{
-        background-image: url(../../assets/imgLoginMobile.jpg);
+        background-image: url(../../assets/img/imgDogMobile.jpg);
         background-repeat: no-repeat;
         background-position: center;
     }
