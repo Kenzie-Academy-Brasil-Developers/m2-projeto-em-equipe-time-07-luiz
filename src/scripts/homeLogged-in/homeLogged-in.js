@@ -1,8 +1,8 @@
 import { getLocalStorage, logout, verify } from "../global/global.js"
+import { adoptToastify, removeToast } from "../toast/toast.js"
 
 logout()
 verify()
-
 
 const requestPetsAdoptable = async () => {
 
@@ -15,7 +15,6 @@ const requestPetsAdoptable = async () => {
         })
 
         const response = await request.json()
-
         return response
         
     } catch (error) {
@@ -35,7 +34,6 @@ const createAdoption = async (body1)=> {
             body: JSON.stringify(body1)
         })
         const response = await request.json()
-
         return response
 
     } catch (error) {
@@ -57,6 +55,12 @@ const adoptPets = async() => {
             const allPets2 = await requestPetsAdoptable()
 
             renderPetsHomeLoggedIn(allPets2)
+
+            adoptToastify();
+
+            setTimeout(() => {
+                removeToast();
+            }, 5000);
         })
     })
 }

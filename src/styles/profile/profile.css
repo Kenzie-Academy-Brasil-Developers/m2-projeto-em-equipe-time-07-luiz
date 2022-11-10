@@ -54,6 +54,11 @@ section{
     display: flex;
     background-color: var(--white);
 }
+
+.body {
+    height: 100%;
+}
+
 img{
     background-color: var(--brand-4);
 }
@@ -156,12 +161,9 @@ li{
 }
 footer{
     align-items: center;
-    background-color: var(--brand-1-70);
     height: 60px;
     width: 100%;
-}
-footer h3{
-    color: var(--brand-1);
+    color: var(--white);
 }
 .div-info-card{
     width: 60%;

@@ -1,7 +1,8 @@
+import { editToastify, removeToast } from "../toast/toast.js"
+
 let token = localStorage.getItem('token')
 
-
-export function openModal(children){
+function openModal(children){
 
     const BodyModal = document.getElementById('corpo')
     const backgroudContainer = document.createElement("section")
@@ -40,9 +41,7 @@ export function openModal(children){
     BodyModal.appendChild(backgroudContainer)
 }
 
-
-
-export function conteudoModalDeletarUser(){
+function conteudoModalDeletarUser(){
 
     const DivConteudoModalDeletar = document.createElement("div")
     DivConteudoModalDeletar.className = `DivConteudoModalDeletar`
@@ -76,36 +75,22 @@ export function conteudoModalDeletarUser(){
     openModal(DivConteudoModalDeletar)
 }
 
-
-export async function requisicaoDeletarUser(){
+async function requisicaoDeletarUser(){
     const resposta =  await fetch(`https://m2-api-adot-pet.herokuapp.com/users/profile`,{
-          
-          method:"DELETE",
-          headers:{
-            'Content-Type':'application/json',
-            Authorization:`Bearer: ${token}`
-        },
-      }).then((response)=>response.json() )
-      
-      .then((response)=> {
-              
-          console.log(response)
-          alert(`usuário deletado com sucesso`)
-        
-          if(response.error){
-  
-              alert(response.error)
-          }
-      })
-      .catch(error =>{
-          console.log(error)
-      })
-      return resposta
-} 
+        method:"DELETE",
+        headers:{
+        'Content-Type':'application/json',
+        Authorization:`Bearer: ${token}`
+    },
+    }).then((response)=>response.json() )
+    .catch(error =>{
+        console.log(error)
+    })
+    return resposta
+}
 
-
-export async function requisicaoEditarUser(user){
-    const resposta =  await fetch(`https://m2-api-adot-pet.herokuapp.com/users/profile`,{          
+async function requisicaoEditarUser(user){
+    const resposta =  await fetch(`https://m2-api-adot-pet.herokuapp.com/users/profile`,{
           method:"PATCH",
           headers:{
             "Content-Type":"application/json",
@@ -113,18 +98,13 @@ export async function requisicaoEditarUser(user){
         },
           body: JSON.stringify(user)
       }).then((response)=>response.json() )
-      
-      .then((response)=> {
-              
-      })
       .catch(error =>{
           console.log(error)
       })
       return resposta
-} 
+}
 
-
-export function conteudoModalEditarUser(){
+function conteudoModalEditarUser(){
 
     const DivConteudoModalEditar = document.createElement("div")
     DivConteudoModalEditar.className = `DivConteudoModalEditar`
@@ -165,9 +145,16 @@ export function conteudoModalEditarUser(){
             localStorage.setItem('img',inputAvatar.value)
 
             requisicaoEditarUser(user)
+            editToastify('success');
             setTimeout(()=>{
                 window.location.reload()
-            },700)
+            },3000)
+        }
+        else {
+            editToastify('error');
+            setTimeout(() => {
+                removeToast();
+            }, 5000);
         }
     })
     
@@ -175,8 +162,7 @@ export function conteudoModalEditarUser(){
     openModal(DivConteudoModalEditar)
 }
 
-
-export async function requisicaoCriarPet(user){
+async function requisicaoCriarPet(user){
     const resposta =  await fetch(`https://m2-api-adot-pet.herokuapp.com/pets`,{          
           method:"POST",
           headers:{
@@ -184,19 +170,14 @@ export async function requisicaoCriarPet(user){
             Authorization : `Bearer: ${token}`
         },
           body: JSON.stringify(user)
-      }).then((response)=>response.json() )
-      
-      .then((response)=> {
-           
-      })
+      }).then((response)=>response.json())
       .catch(error =>{
           console.log(error)
       })
       return resposta
-} 
+}
 
-
-export function conteudoModalCriarPet(){
+function conteudoModalCriarPet(){
 
     const DivConteudoModalEditar = document.createElement("div")
     DivConteudoModalEditar.className = `DivConteudoModalEditar`
@@ -228,16 +209,18 @@ export function conteudoModalCriarPet(){
                 "bread": "SRD",
                 "species": inputEspecie.value,
                 "avatar_url": inputAvatar.value,
-                
             }
-
             requisicaoCriarPet(user)
+            editToastify('success');
             setTimeout(()=>{
                 window.location.reload()
-            },700)
-        }        
+            },3000)
+        }
         else{
-            alert("requisição negada, input esta em branco")
+            editToastify('error');
+            setTimeout(() => {
+                removeToast();
+            }, 5000);
         }
     })
     
@@ -245,8 +228,7 @@ export function conteudoModalCriarPet(){
     openModal(DivConteudoModalEditar)
 }
 
-
-export async function requisicaoEditarPet(user, idPet){
+async function requisicaoEditarPet(user, idPet){
     const resposta =  await fetch(`https://m2-api-adot-pet.herokuapp.com/pets/${idPet}`,{          
           method:"PATCH",
           headers:{
@@ -255,18 +237,13 @@ export async function requisicaoEditarPet(user, idPet){
         },
           body: JSON.stringify(user)
       }).then((response)=>response.json() )
-      
-      .then((response)=> {
-          
-      })
       .catch(error =>{
           console.log(error)
       })
       return resposta
-} 
+}
 
-
-export function conteudoModalEditarPet(idPet){
+function conteudoModalEditarPet(idPet){
 
     const DivConteudoModalEditar = document.createElement("div")
     DivConteudoModalEditar.className = `DivConteudoModalEditar`
@@ -293,23 +270,36 @@ export function conteudoModalEditarPet(idPet){
         e.preventDefault()
         if (inputNomePet.value != `` & inputAvatar.value != `` & inputEspecie.value != ``){
             const user = {
-
                 "name": inputNomePet.value,
                 "species": inputEspecie.value,
                 "avatar_url": inputAvatar.value,
                 "bread": "SRD"
-                
             }
 
-            requisicaoEditarPet(user,idPet)
+            requisicaoEditarPet(user, idPet)
+            editToastify('success');
             setTimeout(()=>{
                 window.location.reload()
-            },700)
+            },3000)
         } else{
-            alert("requisição negada, input esta em branco")
-        }    
+            editToastify('error');
+            setTimeout(() => {
+                removeToast();
+            }, 5000);
+        }
     })
-    
     DivConteudoModalEditar.append(tagH1Editar, inputNomePet, inputEspecie, inputAvatar, bottonEditarPet)
     openModal(DivConteudoModalEditar)
 }
+
+export {
+    openModal,
+    conteudoModalDeletarUser,
+    requisicaoDeletarUser,
+    requisicaoEditarUser,
+    conteudoModalEditarUser,
+    requisicaoCriarPet,
+    conteudoModalCriarPet,
+    requisicaoEditarPet,
+    conteudoModalEditarPet
+};

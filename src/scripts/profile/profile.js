@@ -14,19 +14,13 @@ let deleteUser = document.getElementById('delete-user')
 let attUser = document.getElementById('att')
 let createPet = document.getElementById('register-new-pet')
 
-import { openModal } from "../global/modal.js"
 import { conteudoModalDeletarUser } from "../global/modal.js"
 import { conteudoModalEditarUser } from "../global/modal.js"
 import { conteudoModalCriarPet } from "../global/modal.js"
 import { conteudoModalEditarPet } from "../global/modal.js"
+import { verify } from "../global/global.js"
 
-import { requisicaoDeletarUser } from "../global/modal.js"
-import { requisicaoEditarUser } from "../global/modal.js"
-import { requisicaoCriarPet } from "../global/modal.js"
-import { requisicaoEditarPet } from "../global/modal.js"
-
-
-
+verify()
 
 deleteUser.addEventListener('click', () => {
     conteudoModalDeletarUser ()
@@ -39,17 +33,12 @@ createPet.addEventListener('click', () => {
     conteudoModalCriarPet()
 })
 
-
-
-
-
 const dinamizar = () => {
     email.innerText =`Email: ${emailL}`
     nome.innerText = `Nome: ${nameL}`
     img.src = imgL
 }
 dinamizar()
-
 
 const criarCards = (element) => {
 
@@ -129,7 +118,7 @@ const loading = () => {
     let img = document.createElement('img')
 
     divBack.classList = 'background'
-    img.src = '../assets/loading-gif.gif'
+    img.src = '../assets/img/loading-gif.gif'
     divBack.id = 'divBack'
 
     divBack.appendChild(divImg)
@@ -148,7 +137,7 @@ logout.addEventListener('click', () => {
     localStorage.setItem('img',null)
 
     setTimeout(()=>{
-        window.location.href = '../pages/home.html'
+        window.location.href = '../../index.html'
     },1000)
 
 })

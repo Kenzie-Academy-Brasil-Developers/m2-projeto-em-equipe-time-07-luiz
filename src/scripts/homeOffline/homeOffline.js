@@ -11,27 +11,21 @@ const requestPetAll = async() => {
         })
    
         const response = await resposta.json()
-        
         for(let i = 0; i < 6; i++){
-        let index = Math.floor(Math.random()*(response.length-7))
-        randonArr.push(response[index])
+            let index = Math.floor(Math.random()*(response.length-7))
+            randonArr.push(response[index])
         }
 
         criarCards(randonArr)
-
-
         return response
     }catch (error) {
         console.log(error)
     }
-
 }
 
 requestPetAll()
 
 const tagUl = document.querySelector("ul")
-
-
 function criarCards(arr){
 
     arr.forEach((element) => {
@@ -56,13 +50,8 @@ function criarCards(arr){
         tagLi.append(divImg, tagName, tagEspecie)
     
         tagUl.appendChild(tagLi)
-    
-
     })
-
-
 }
-
 
 function chengePage(){
 

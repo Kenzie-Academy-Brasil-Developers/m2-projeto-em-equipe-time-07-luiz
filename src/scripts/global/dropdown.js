@@ -3,8 +3,6 @@ const buttonList = document.querySelector('.redirect-div');
 
 const dropdownEvent = () => {
 
-  console.log(buttonList);
-
   dropdownBtn.addEventListener('click', () => {
 
     buttonList.classList.toggle('redirect-active');
@@ -15,8 +13,6 @@ const dropdownEvent = () => {
     else if (dropdownBtn.src === '../assets/xIcon.svg') {
       dropdownBtn.src = '../assets/menuListIcon.svg';
     }
-
-    console.log(dropdownBtn)
   })
 }
 
