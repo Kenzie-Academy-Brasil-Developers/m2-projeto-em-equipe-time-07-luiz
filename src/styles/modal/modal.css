@@ -21,7 +21,8 @@
     position: fixed;
     top: 60px;
     background-color: white;
-    width: 520px;
+    width: 100%;
+    max-width: 520px;
     height: 380px;
     justify-content: space-between;
 }
